@@ -60,7 +60,7 @@ pipeline {
                     // Replace image in the deployment YAML dynamically
                     sh """
                     sed -i 's|<IMAGE_URI>|$ECR_URI:$BUILD_TAG|g' k8s-deployment.yaml
-                    kubectl apply -f k8s-deployment.yaml
+                    kubectl apply -f deployment/deployment.yaml
                     """
                 }
             }
