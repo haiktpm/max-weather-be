@@ -61,6 +61,8 @@ pipeline {
                     sh """
                     sed -i 's|<IMAGE_URI>|$ECR_URI:$BUILD_TAG|g' deployment/deployment.yaml
                     kubectl apply -f deployment/deployment.yaml
+                    kubectl apply -f deployment/ingress.yaml
+                    kubectl apply -f deployment/service.yaml
                     """
                 }
             }
