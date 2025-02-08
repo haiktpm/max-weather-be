@@ -20,7 +20,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git 'git@github.com:haiktpm/max-weather-be.git'
+                git branch: 'main', credentialsId: 'git', url: 'git@github.com:haiktpm/max-weather-be.git'
             }
         }
 
