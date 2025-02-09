@@ -63,6 +63,7 @@ pipeline {
                     kubectl apply -f deployment/deployment.yaml
                     kubectl apply -f deployment/ingress.yaml
                     kubectl apply -f deployment/service.yaml
+                    kubectl apply -f deployment/hpa.yaml
                     """
                 }
             }
